@@ -1,0 +1,116 @@
+/* General styles */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+/* Container styles */
+.cv-container {
+  display: grid;
+  grid-template-areas:
+    "header header"
+    "sidebar main"
+    "footer footer";
+  grid-template-rows: auto 1fr auto;
+  grid-template-columns: 200px 1fr;
+  gap: 20px;
+  min-height: 100vh;
+}
+
+/* Header styles */
+.header {
+  grid-area: header;
+  background-color: rgb(72, 155, 233);
+  padding: 20px;
+  font-size: 25px;
+  color: #fff;
+  text-align: center;
+}
+
+/* Sidebar styles */
+.sidebar {
+  grid-area: sidebar;
+  background-color: #58697d;
+  padding: 20px;
+  color: #fff;
+}
+
+/* Main content styles */
+.main {
+  grid-area: main;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  padding: 20px;
+}
+
+.left-column,
+.right-column {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
+/* Footer styles */
+.footer {
+  grid-area: footer;
+  background-color: rgb(72, 155, 233);
+  padding: 20px;
+  color: #fff;
+  text-align: center;
+}
+
+/* Additional styles */
+a {
+  color: rgb(72, 155, 233);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+h1 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+p {
+  margin-bottom: 10px;
+}
+
+/* Responsive styles */
+@media screen and (min-width: 576px) {
+  .cv-container {
+    grid-template-areas:
+      "header header"
+      "sidebar main"
+      "footer footer";
+    grid-template-columns: 200px 1fr;
+  }
+
+  .main {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .cv-container {
+    grid-template-areas:
+      "header header header"
+      "sidebar main main"
+      "footer footer footer";
+    grid-template-columns: 200px 1fr 1fr;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .cv-container {
+    grid-template-areas:
+      "header header header header"
+      "sidebar sidebar main main"
+      "footer footer footer footer";
+    grid-template-columns: 200px 200px 1fr 1fr;
+  }
+}
